@@ -22,14 +22,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "pnpm"
 
       - name: Install pnpm
-        run: npm install -g pnpm  # <- FIXED indentation issue
+        run: corepack enable && corepack prepare pnpm@latest --activate
 
       - name: Restore pnpm cache
         uses: actions/cache@v4
