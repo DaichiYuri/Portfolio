@@ -14,7 +14,7 @@ export default function ProjectTile({ project }) {
       {/* Project Image */}
       <div className="relative w-full h-48">
         <Image
-          src={project.image}
+          src={"/Portfolio"+project.image}
           alt={project.title}
           layout="fill"
           objectFit="cover"

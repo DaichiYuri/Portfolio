@@ -64,7 +64,7 @@ function MainPage(){
         </div>
           <Image
             aria-hidden
-            src="/images/currys_paradox.png"
+            src="/Portfolio/images/currys_paradox.png"
             alt="File icon"
             width={600}
             height={500}
@@ -77,7 +77,7 @@ function MainPage(){
       <div className="bg-[#121212] p-3 mt-10 lg:mb-20 shadow-5xl rounded-2xl lg:h-80 lg:flex">
           <Image
             aria-hidden
-            src="/images/virtual_workspace.png"
+            src="/Portfolio/images/virtual_workspace.png"
             alt="File icon"
             width={600}
             height={500}
@@ -97,7 +97,7 @@ function MainPage(){
         </div>
           <Image
             aria-hidden
-            src="/images/painting_fishes_in_cloud.jpeg"
+            src="/Portfolio/images/painting_fishes_in_cloud.jpeg"
             alt="File icon"
             width={600}
             height={500}
@@ -110,7 +110,7 @@ function MainPage(){
       <div className="bg-[#121212] p-3 mt-10 lg:mb-20 shadow-5xl rounded-2xl lg:h-80 lg:flex">
         <Image
           aria-hidden
-          src="/images/butterfly_effect.jpeg"
+          src="/Portfolio/images/butterfly_effect.jpeg"
           alt="File icon"
           width={600}
           height={500}

@@ -30,7 +30,7 @@ function Pin(){
         <div className="gap-8 columns-3 columns-3xs px-6">
         {images.map(({ src, alt, insta, pinterest }, index) => (
             <div key={index} className="relative group">
-            <Image className="w-full my-10 rounded-xl" src={src} alt={alt} width={100} height={100} priority unoptimized={true}/>
+            <Image className="w-full my-10 rounded-xl" src={"/Portfolio"+src} alt={alt} width={100} height={100} priority unoptimized={true}/>
             
             {/* Social Icons - Show on Hover */}
             <div className="absolute inset-0 flex items-center justify-center gap-4 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">

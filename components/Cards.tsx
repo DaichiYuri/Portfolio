@@ -76,7 +76,7 @@ export default function Deck() {
             {...bind(i)}
             style={{
               transform: interpolate([rot, scale], trans),
-              backgroundImage: `url(${cards[i]})`,
+              backgroundImage: `url(/Portfolio${cards[i]})`,
             }}
             className="rounded-2xl shadow-3xlw"
           />

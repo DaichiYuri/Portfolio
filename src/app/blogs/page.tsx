@@ -37,7 +37,7 @@ export default function Blog() {
                 {/* Blog Image */}
                 <div className="relative w-full h-48">
                 <Image
-                    src={blog.image}
+                    src={"/Portfolio"+blog.image}
                     alt={blog.title}
                     layout="fill"
                     objectFit="cover"
