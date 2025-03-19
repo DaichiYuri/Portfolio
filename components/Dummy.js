@@ -1,7 +1,6 @@
 'use client';
-import Image from "next/image";
 import Link from 'next/link'
-import { FaGithub, FaEnvelope, FaDiscord, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaEnvelope, FaInstagram } from "react-icons/fa";
 import React, { useState} from "react";
 import { useSpring, animated } from "react-spring";
 
@@ -23,7 +22,7 @@ export default function Dummy({comp}) {
   return (
       <div className="items-center min-h-screen justify-item-end pt-6 sm:p-20 gap-16 font-[family-name:var(--font-geist-sans)] overflow-hidden z-[2]">
       <main className="font-[family-name:var(--font-geist-mono)] font-semibold">
-        <animated.div style={{...styles}} className="grid grid-cols-2 gap-1 w-8 p-1 rounded right-2 lg:right-5 top-[45%] fixed z-[11] bg-[#ed8008]" onClick={()=>{navi?setNav(false):setNav(true);}} onMouseDown={()=>setClicked(true)} onMouseUp={()=>setClicked(false)} onTouchStart={()=>setClicked(true)} onTouchEnd={()=>setClicked(false)}>
+        <animated.div style={{...styles}} className="grid grid-cols-2 gap-1 w-8 p-1 rounded right-2 lg:right-5 top-[45%] fixed z-[11] bg-[#ed8008]" onClick={()=>setNav(!navi)} onMouseDown={()=>setClicked(true)} onMouseUp={()=>setClicked(false)} onTouchStart={()=>setClicked(true)} onTouchEnd={()=>setClicked(false)}>
           {Array.from({ length: dotCount }).map((_, index) => (
             <div
               key={index}

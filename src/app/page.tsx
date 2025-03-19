@@ -25,7 +25,7 @@ function MainPage(){
         <div className="max-w-5xl">
           <TypingEffect text="Creating Worlds with Code, Canvas & Cosmic Tales" /><br/>
           <p className="lg:m-3 lg:text-1g sm:text-sm"> {/*text-[#567CA3] */}
-            <span className="lg:text-2xl text-xl font-lobster font-thin">Hi, I'm Mahipal Rajpurohit, </span>
+            <span className="lg:text-2xl text-xl font-lobster font-thin">Hi, I&apos;m Mahipal Rajpurohit, </span>
             <span className="lg:text-xl text-lg font-pacifico font-thin">Backend Developer and a tech enthusiast</span><br/>
             <span className="text-xs lg:text-base font-playfair italic lg:font-semibold">
             I thrive at the intersection of logic and innovation. Beyond tech, I weave stories and art, bringing imagination to life.
