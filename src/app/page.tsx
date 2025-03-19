@@ -137,8 +137,11 @@ function TextAnimation({ text }: { text: ReactNode }){
   </motion.h1>
   );
 }
+interface TypingEffectProps {
+  text: string;
+}
 
-const TypingEffect = ({ text }) => {
+const TypingEffect: React.FC<TypingEffectProps> = ({ text }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);
 
