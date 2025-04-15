@@ -38,7 +38,7 @@ export default function Dummy({comp}) {
         >
           {menuItems.map((item, index) => (
             <div key={index} className="w-30 h-[50px] m-3 rounded">
-              <Link href={item.url} prefetch={true}>
+              <Link href={item.url} prefetch={true} onClick={()=>setNav(!navi)} onMouseDown={()=>setClicked(true)} onMouseUp={()=>setClicked(false)} onTouchStart={()=>setClicked(true)} onTouchEnd={()=>setClicked(false)} >
                 <p className="p-3 text-[#fff] text-[20px]">{item.name}</p>
               </Link>
             </div>
