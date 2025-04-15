@@ -3,23 +3,24 @@ import { motion } from "framer-motion";
 import { animated, useSpring, useSpringValue } from "@react-spring/web";
 
 const stops = [
-  { id: 1, cx: 110, cy: 410, label: "Started Journey", stop:0 ,content:'Started my journey by exploring AI and robotics, attending workshops to build a strong foundation.'},
-  { id: 2, cx: 155, cy: 470, label: "IoT & Embedded Systems", stop:87.5 ,content:'Explored Arduino, ESP8266, and more. Built my first web server to remotely control electronics, diving into protocols like HTTP, MQTT, and WebSockets while expanding my knowledge in IoT and embedded development.'},
-  { id: 3, cx: 200, cy: 425, label: "Drones & Wireless Control", stop:175 ,content:'Built my own drone using ESP8266 and high-switching MOSFETs, integrating an ESP32-CAM for real-time video streaming. Explored advanced drone control and swarm coordination with ArduPilot.'},
-  { id: 4, cx: 200, cy: 330, label: "First Milestone", stop:287.5 ,content:'3hfhghgjdfghjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk'},
-  { id: 5, cx: 250, cy: 280, label: "First Milestone", stop:383.4 ,content:'4hfhghgjdfghjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk'},
-  { id: 6, cx: 300, cy: 355, label: "First Milestone", stop:500 ,content:'5hfhghgjdfghjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk'},
-  { id: 7, cx: 345, cy: 420, label: "First Milestone", stop:600 ,content:'6hfhghgjdfghjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk'},
-  { id: 8, cx: 390, cy: 325, label: "First Milestone", stop:730 ,content:'7hfhghgjdfghjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk'},
-  { id: 9, cx: 390, cy: 230, label: "First Milestone", stop:853.4 ,content:'8hfhghgjdfghjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk'},
-  { id: 10, cx: 440, cy: 180, label: "First Milestone", stop:952.5 ,content:'9hfhghgjdfghjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk'},
+  { id: 1, cx: 110, cy: 410, label: "Spark of Curiosity", stop:0 ,content:'Dove into the world of AI & robotics. Attended hands-on workshops that laid the foundation for everything ahead.'},
+  { id: 2, cx: 155, cy: 470, label: "Wired to the Web", stop:87.5 ,content:'Experimented with Arduino and ESP8266, and built my first IoT web server. Explored HTTP, MQTT, and WebSocket protocols to control real-world devices.'},
+  // { id: 3, cx: 200, cy: 425, label: "Drones & Wireless Control", stop:175 ,content:'Built my own drone using ESP8266 and high-switching MOSFETs, integrating an ESP32-CAM for real-time video streaming. Explored advanced drone control and swarm coordination with ArduPilot.'},
+  { id: 3, cx: 200, cy: 330, label: "Drone Zone (Crash Course)", stop:287.5 ,content:'Built a drone with ESP8266 and ESP32-CAM for live streaming. Took a wild ride into swarm coordination and control systems. (Yes, it tried to fly...)'},
+  { id: 4, cx: 250, cy: 280, label: "Pandemic Protector", stop:383.4 ,content:'In a college hackathon, developed a smart COVID surveillance app with face-mask detection, patient similarity check, and contact tracking using ESP-CAM + Flask + CNNs.'},
+  { id: 5, cx: 300, cy: 355, label: "Tumor Tracker", stop:500 ,content:'At Ingenium Hackathon, developed brain tumor segmentation, 3D reconstruction, and survival prediction from CT scans — bridging healthcare and AI. Later extended the work to liver tumor analysis for JIPMER Hospital, under the guidance of Prof. Jayanthi Ma\'am.'},
+  { id: 6, cx: 345, cy: 420, label: "DSA Dungeon", stop:600 ,content:'Battled through CodeJam and CodeChef contests, sharpening my data structures & algorithms skills, one bug at a time.'},
+  { id: 7, cx: 390, cy: 325, label: "ChatBot Builder", stop:730 ,content:'Built a smart chatbot builder for Dell during the Smart India Hackathon. Used DistilBERT for instant replies and T5 for PDF-based FAQ generation. Integrated flow control, context handling, and pretrained NLP models.'},
+  { id: 8, cx: 390, cy: 230, label: "Into the VR-verse", stop:853.4 ,content:'Final year project: Built a virtual workspace using a smart data glove and 3D WebVR interface powered by ESP + Three.js + WebSockets + Express.js + Electron.js.'},
+  { id: 9, cx: 440, cy: 180, label: "Speedy Search Sorcerer", stop:952.5 ,content:'As a project trainee, engineered a fast and generic search module with Redis caching and automatic DB fallback on cache misses.'},
   // { id: 11, cx: 490, cy: 230, label: "First Milestone", stop:1041 ,content:'10hfhghgjdfghjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk'},
-  { id: 11, cx: 490, cy: 280, label: "First Milestone", stop:1100 ,content:'11hfhghgjdfghjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk'},
-  { id: 12, cx: 570, cy: 320, label: "First Milestone", stop:1200 ,content:'12hfhghgjdfghjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk'},
+  { id: 10, cx: 490, cy: 280, label: "Security Sentinel", stop:1100 ,content:'Explored Docker and Kubernetes (Minikube), while mastering 37 web security vulnerabilities. Applied this knowledge to mitigate 3 critical issues in my app team — including SQL Injection, ZipBomb, and ZipSlip.'},
+  { id: 11, cx: 570, cy: 320, label: "…And the Journey Continues", stop:1200 ,content:'Every step taught me something new. The road ahead is filled with endless bytes of adventure.'},
 ];
 
 export default function JourneyMap() {
   const [hovered, setHovered] = useState(null);
+  const [offver, setOffver] = useState(null);
   const totalLength = 1200; // Approximate total length of the path
 
   // // Spring animation
@@ -36,23 +37,41 @@ export default function JourneyMap() {
     from: { offset: totalLength },
     to: { offset: 0 },
     loop: true,
-    config: { duration: 10000 },
+    config: { duration: 20000 },
     reset: startAnimation, // Restart animation when component mounts
     immediate: false,
     pause: hovered !== null, // Pause when hovered
   });
 
-  // const offset = useSpringValue(totalLength); // Tracks animated stroke progress
-
-  // const spring = useSpring({
-  //   offset: 0,
-  //   from: { offset: totalLength },
-  //   config: { duration: 3000 },
-  //   pause: hovered !== null,
-  //   reset: startAnimation,
-  //   onChange: (o) => offset.set(o.offset), // Update offset state dynamically
-  // });
+  //trigger hover over offset value
+  useEffect(() => {
+    let frameId;
   
+    const checkOffset = () => {
+      const val = offset.get(); // get the current offset value
+      //finding closest stop
+      const current = stops.reduce((closest, stop) => {
+        const diff = val - stop.stop;
+        if(closest && val-closest.stop < 0){
+          closest.stop = totalLength;
+        }
+        if (diff >= 0) {
+          if (!closest || diff < val - closest.stop) {
+            return stop;
+          }
+        }
+        return closest;
+      }, null);
+
+      setOffver(11-current.id);
+      frameId = requestAnimationFrame(checkOffset); // keep polling
+    };
+  
+    frameId = requestAnimationFrame(checkOffset);
+  
+    return () => cancelAnimationFrame(frameId);
+  }, [offset, offver]);
+
   const calculateDashArray = (hoveredId) => {
     if (!hoveredId) return totalLength;
     const stop = stops.find((s) => s.id === hoveredId);
@@ -94,10 +113,10 @@ export default function JourneyMap() {
             cx={stop.cx}
             cy={stop.cy}
             r={hovered === stop.id ? 15 : 10}
-            fill={hovered === stop.id ? "#ed8008" : "#567ca3"}
+            fill={hovered === stop.id || offver===stop.id ? "#ed8008" : "#567ca3"}
           />
           {((stop.id === hovered) || hovered===null) && (
-            <text x={stop.cx - 40} y={stop.cy - 15} fontSize="15" fill={hovered?"#ed8008":"#567ca3"}>
+            <text x={stop.cx - 40} y={stop.cy - 15} fontSize="15" fill={hovered || offver===stop.id ?"#ed8008":"#567ca3"}>
               {stop.label}
             </text>
           )}
@@ -109,7 +128,7 @@ export default function JourneyMap() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: true }}
-      className='pl-5 pb-5 lg:absolute left-[8%] lg:top-[152%] lg:w-[25%] text-[#ed8008] '
+      className='pl-5 pb-5 lg:absolute left-[8%] lg:top-[152%] lg:w-[25%] text-[#ed8008] lg:text-[20px] text-[10px]'
     >
       {hovered?stops[hovered-1].content:'* Hover over the milestones to explore more!'}
     </motion.p>
